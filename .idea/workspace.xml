@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="87004dab-3f63-4383-9cbe-746b17ff0fda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Naughts_n_Crosses_by_Nitzan.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/__init__.py" afterDir="false" />
+    <list default="true" id="87004dab-3f63-4383-9cbe-746b17ff0fda" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/board.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/cell.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +41,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -57,11 +68,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716460225713</updated>
-      <workItem from="1716460229561" duration="316000" />
+      <workItem from="1716460229561" duration="2462000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1716460655981</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716460655981</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Naughts_n_Crosses_by_Nitzan$main.coverage" NAME="main Coverage Results" MODIFIED="1716463548657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naughts_and_crosses" />
   </component>
 </project>
