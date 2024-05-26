@@ -21,6 +21,9 @@ class NncGui:
         # create game board:
         self.create_game_board()
 
+        # create stats bar:
+        self.create_stats_bar()
+
         # update turn label:
         self.update_turn_label()
 
@@ -50,6 +53,22 @@ class NncGui:
                 row_buttons.append(button)
             self.buttons.append(row_buttons)
 
+    def create_stats_bar(self):
+        bottom_frame = tk.Frame(self.master)
+        bottom_frame.pack(side=tk.BOTTOM, fill=tk.X)
+
+        self.stats_label = tk.Label(bottom_frame, text="", font=("Helvetica", 12))
+        self.stats_label.pack(side=tk.LEFT)
+
+        self.reset_stats_button = tk.Button(bottom_frame, text="Reset Stats", font=("Helvetica", 24) , command=self.reset_stats)
+        self.reset_stats_button.pack(side=tk.RIGHT)
+
+        self.update_stats_label()
+
+    def reset_stats(self):
+        self.game.stats.reset_stats()
+        self.reset_board()
+
     def reset_board(self):
         self.game.reset_game()
         for row in self.buttons:
@@ -62,9 +81,21 @@ class NncGui:
         if self.game.make_move(row, col):
             value = self.game.get_cell_value(row, col)
             self.buttons[row][col].config(text=value, fg=player.color)
+            self.game.check_result()
             self.update_turn_label()
-            # TODO: implement end game logic
+
 
     def update_turn_label(self):
         player = self.game.current_player
         self.turn_label.config(text=f"P{player.number} Turn {player.symbol}", fg=player.color)
+
+    def update_stats_label(self):
+        stats = self.game.stats
+        stats_text = (
+            f"P1 Score: {stats.p1_score}\n"
+            f"P2 Score: {stats.p2_score}\n"
+            f"Draws: {stats.draws}\n"
+            f"Games Played: {stats.games_played}\n"
+        )
+
+        self.stats_label.config(text=stats_text)

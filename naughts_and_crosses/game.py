@@ -5,12 +5,13 @@ from board import Board
 from cell import Cell
 import constants
 from naughts_and_crosses.player import Player
+from naughts_and_crosses.stats import Stats
 
 
 class Game:
     def __init__(self):
         self.board = Board()
-        # self.stats = Stats() TODO: implement stats
+        self.stats = Stats()
         self.players = {
             1: Player(constants.P1, constants.P1_SYMBOL, constants.P1_COLOR),
             2: Player(constants.P2, constants.P2_SYMBOL, constants.P2_COLOR)
@@ -36,6 +37,7 @@ class Game:
         curr_index = players_keys.index(self.current_player.number)
         next_index = (curr_index + 1) % len(self.players)
         return self.players[players_keys[next_index]]
+
 
     def get_cell_value(self, row, col):
         return self.board.get_cell_value(row, col)
