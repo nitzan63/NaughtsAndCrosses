@@ -1,5 +1,8 @@
 
 class Cell:
+    """
+    Represents a cell in the game
+    """
     def __init__(self):
         self._value = None
 

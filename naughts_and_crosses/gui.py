@@ -5,6 +5,9 @@ from naughts_and_crosses import constants
 
 
 class NncGui:
+    """
+    This class manages the GUI interface for the game. It's responsible for the input from the user, and displays the board.
+    """
     def __init__(self, master, game):
         self.master = master
         self.game = game
@@ -31,6 +34,9 @@ class NncGui:
         self.update_turn_label()
 
     def create_top_bar(self):
+        """
+        Creates the top bar of the game screen
+        """
         # create and pack the frame:
         top_frame = tk.Frame(self.master)
         top_frame.pack(side=tk.TOP, fill=tk.X)
@@ -44,6 +50,10 @@ class NncGui:
         self.new_game_button.pack(side=tk.RIGHT)
 
     def create_game_board(self):
+        """
+        Creates the game board of the game
+        :return:
+        """
         self.board_frame = tk.Frame(self.master)
         self.board_frame.pack(expand=True)
 
@@ -57,6 +67,10 @@ class NncGui:
             self.buttons.append(row_buttons)
 
     def create_stats_bar(self):
+        """
+        Creates the stats bar of the game screen
+        :return:
+        """
         bottom_frame = tk.Frame(self.master)
         bottom_frame.pack(side=tk.BOTTOM, fill=tk.X)
 
@@ -70,23 +84,36 @@ class NncGui:
         self.update_stats_label()
 
     def reset_stats(self):
+        """
+        Resets the stats bar of the game screen
+        """
         self.game.stats.reset()
         self.reset_board()
         self.update_stats_label()
 
     def reset_board(self):
-        self.game.reset_game()
+        """
+        Resets the game board and enables all buttons
+        """
+        self.game.new_game()
         for row in self.buttons:
             for button in row:
                 button.config(text="", state=tk.NORMAL)
         self.update_turn_label()
 
     def handle_click(self, row, col):
+        """
+        Handles the click of the board button.
+        after the player clicks the board button, the GUI asks the game class for the result.
+        if the result is not false (which means the player pressed a valid cell button), this method will update the game board.
+        if the result is a number, it will ask to declare the results and disable all buttons.
+        else -> displays next players turn
+        """
         result = self.game.make_move(row, col)
         if result is not False:
             value = self.game.get_cell_value(row, col)
             player = self.game.current_player
-            self.buttons[row][col].config(text=value, fg=player.color)  # TODO: maybe disable button?
+            self.buttons[row][col].config(text=value, fg=player.color)
             if result == constants.DRAW or result is not None:
                 self.declare_result(result)
                 self.disable_board_buttons()
@@ -96,6 +123,9 @@ class NncGui:
             self.update_stats_label()
 
     def declare_result(self, result):
+        """
+        Declares the result of the game based on the result
+        """
         if result == constants.DRAW:
             message = "It's a Draw!"
         else:
@@ -119,6 +149,9 @@ class NncGui:
         self.stats_label.config(text=stats_text)
 
     def disable_board_buttons(self):
+        """
+        disable all buttons after the game is over
+        """
         for row in self.buttons:
             for button in row:
                 button.config(state=tk.DISABLED)

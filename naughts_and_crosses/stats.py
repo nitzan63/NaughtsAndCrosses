@@ -1,5 +1,8 @@
 
 class Stats():
+    """
+    Class to hold and manage the statistics about the game, each method preforms simple sum functions.
+    """
     def __init__(self):
         self.p1_score = 0
         self.p2_score = 0
