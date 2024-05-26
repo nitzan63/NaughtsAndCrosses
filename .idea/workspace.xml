@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87004dab-3f63-4383-9cbe-746b17ff0fda" name="Changes" comment="added exceptions catching in handle click">
+    <list default="true" id="87004dab-3f63-4383-9cbe-746b17ff0fda" name="Changes" comment="GUI design changes">
+      <change afterPath="$PROJECT_DIR$/naughts_and_crosses/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naughts_and_crosses/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/naughts_and_crosses/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716460225713</updated>
-      <workItem from="1716460229561" duration="22727000" />
+      <workItem from="1716460229561" duration="25662000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -176,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716719561455</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="GUI design changes">
+      <option name="closed" value="true" />
+      <created>1716720076645</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716720076645</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +212,8 @@
     <MESSAGE value="integrated classes and functions -&gt; GAME WORKS!" />
     <MESSAGE value="added documentation" />
     <MESSAGE value="added exceptions catching in handle click" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exceptions catching in handle click" />
+    <MESSAGE value="GUI design changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI design changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Naughts_n_Crosses_by_Nitzan$gui.coverage" NAME="gui Coverage Results" MODIFIED="1716463582320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naughts_and_crosses" />
