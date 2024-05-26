@@ -138,7 +138,8 @@ class NncGui:
 
     def update_turn_label(self):
         player = self.game.current_player
-        self.turn_label.config(text=f"P{player.number} Turn {player.symbol}", fg=player.color)
+        self.turn_label.config(text=f"Player {player.number}'s Turn {player.symbol}\n"
+                                    f"Choose a cell", fg=player.color)
 
     def update_stats_label(self):
         stats = self.game.stats
