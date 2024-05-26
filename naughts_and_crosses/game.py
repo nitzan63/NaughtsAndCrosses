@@ -28,8 +28,14 @@ class Game:
     def make_move(self, row, col):
         if self.board.make_move(row, col, self.current_player):
             self.current_turn += 1
-            self.current_player = self.get_next_player()
-            return True
+            winner = self.check_result()
+            if winner:
+                self.stats.update_winner(winner)
+                return winner
+            elif self.current_turn == 9:
+                self.stats.update_draws()
+                return constants.DRAW
+            return None
         return False
 
     def get_next_player(self):
@@ -38,6 +44,25 @@ class Game:
         next_index = (curr_index + 1) % len(self.players)
         return self.players[players_keys[next_index]]
 
+    def check_result(self):
+        winning_combinations = [
+            # rows:
+            [self.board.get_cell_value(0,0), self.board.get_cell_value(0,1), self.board.get_cell_value(0,2)],
+            [self.board.get_cell_value(1, 0), self.board.get_cell_value(1, 1), self.board.get_cell_value(1, 2)],
+            [self.board.get_cell_value(2, 0), self.board.get_cell_value(2, 1), self.board.get_cell_value(2, 2)],
+            # cols:
+            [self.board.get_cell_value(0, 0), self.board.get_cell_value(1, 0), self.board.get_cell_value(2,0)],
+            [self.board.get_cell_value(0, 1), self.board.get_cell_value(1, 1), self.board.get_cell_value(2, 1)],
+            [self.board.get_cell_value(0, 2), self.board.get_cell_value(1, 2), self.board.get_cell_value(2, 2)],
+            # diagonal:
+            [self.board.get_cell_value(0, 0), self.board.get_cell_value(1, 1), self.board.get_cell_value(2, 2)],
+            [self.board.get_cell_value(0, 2), self.board.get_cell_value(1, 1), self.board.get_cell_value(2, 0)]
+        ]
+
+        for combination in winning_combinations:
+            if combination[0] is not None and combination[0] == combination [1] == combination [2]:
+                return self.current_player.number
+        return None
 
     def get_cell_value(self, row, col):
         return self.board.get_cell_value(row, col)

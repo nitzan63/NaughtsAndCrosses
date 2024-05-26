@@ -2,6 +2,7 @@
 
 P1 = 1
 P2 = 2
+DRAW = 0
 
 # Player symbol
 
@@ -11,4 +12,6 @@ P2_SYMBOL = 'X'
 # Player color
 P1_COLOR = 'green'
 P2_COLOR = 'red'
+
+
 

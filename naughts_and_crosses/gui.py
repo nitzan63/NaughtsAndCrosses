@@ -1,4 +1,7 @@
 import tkinter as tk
+from tkinter import messagebox
+
+from naughts_and_crosses import constants
 
 
 class NncGui:
@@ -57,17 +60,19 @@ class NncGui:
         bottom_frame = tk.Frame(self.master)
         bottom_frame.pack(side=tk.BOTTOM, fill=tk.X)
 
-        self.stats_label = tk.Label(bottom_frame, text="", font=("Helvetica", 12))
+        self.stats_label = tk.Label(bottom_frame, text="", font=("Helvetica", 20))
         self.stats_label.pack(side=tk.LEFT)
 
-        self.reset_stats_button = tk.Button(bottom_frame, text="Reset Stats", font=("Helvetica", 24) , command=self.reset_stats)
+        self.reset_stats_button = tk.Button(bottom_frame, text="Reset Game", font=("Helvetica", 24),
+                                            command=self.reset_stats)
         self.reset_stats_button.pack(side=tk.RIGHT)
 
         self.update_stats_label()
 
     def reset_stats(self):
-        self.game.stats.reset_stats()
+        self.game.stats.reset()
         self.reset_board()
+        self.update_stats_label()
 
     def reset_board(self):
         self.game.reset_game()
@@ -77,13 +82,26 @@ class NncGui:
         self.update_turn_label()
 
     def handle_click(self, row, col):
-        player = self.game.current_player
-        if self.game.make_move(row, col):
+        result = self.game.make_move(row, col)
+        if result is not False:
             value = self.game.get_cell_value(row, col)
-            self.buttons[row][col].config(text=value, fg=player.color)
-            self.game.check_result()
-            self.update_turn_label()
+            player = self.game.current_player
+            self.buttons[row][col].config(text=value, fg=player.color)  # TODO: maybe disable button?
+            if result == constants.DRAW or result is not None:
+                self.declare_result(result)
+                self.disable_board_buttons()
+            else:
+                self.game.current_player = self.game.get_next_player()
+                self.update_turn_label()
+            self.update_stats_label()
 
+    def declare_result(self, result):
+        if result == constants.DRAW:
+            message = "It's a Draw!"
+        else:
+            message = f"Player {result} Won!"
+        message += "\n Press New Game button for another round!"
+        messagebox.showinfo("Game Over", message)
 
     def update_turn_label(self):
         player = self.game.current_player
@@ -99,3 +117,8 @@ class NncGui:
         )
 
         self.stats_label.config(text=stats_text)
+
+    def disable_board_buttons(self):
+        for row in self.buttons:
+            for button in row:
+                button.config(state=tk.DISABLED)

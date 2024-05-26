@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87004dab-3f63-4383-9cbe-746b17ff0fda" name="Changes" comment="Implemented the Game Board gui, created player class, and updated game and gui accordingly">
+    <list default="true" id="87004dab-3f63-4383-9cbe-746b17ff0fda" name="Changes" comment="Added stats bar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naughts_and_crosses/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/naughts_and_crosses/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naughts_and_crosses/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/naughts_and_crosses/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naughts_and_crosses/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/naughts_and_crosses/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naughts_and_crosses/stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/naughts_and_crosses/stats.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716460225713</updated>
-      <workItem from="1716460229561" duration="15178000" />
+      <workItem from="1716460229561" duration="19476000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -146,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716709661296</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added stats bar">
+      <option name="closed" value="true" />
+      <created>1716712727061</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716712727061</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,10 +178,11 @@
     <MESSAGE value="Added top bar in GUI" />
     <MESSAGE value="Created Cell and Board classes" />
     <MESSAGE value="Implemented the Game Board gui, created player class, and updated game and gui accordingly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the Game Board gui, created player class, and updated game and gui accordingly" />
+    <MESSAGE value="Added stats bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added stats bar" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Naughts_n_Crosses_by_Nitzan$gui.coverage" NAME="gui Coverage Results" MODIFIED="1716463582320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naughts_and_crosses" />
-    <SUITE FILE_PATH="coverage/Naughts_n_Crosses_by_Nitzan$main.coverage" NAME="main Coverage Results" MODIFIED="1716712215481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naughts_and_crosses" />
+    <SUITE FILE_PATH="coverage/Naughts_n_Crosses_by_Nitzan$main.coverage" NAME="main Coverage Results" MODIFIED="1716716764837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naughts_and_crosses" />
   </component>
 </project>
