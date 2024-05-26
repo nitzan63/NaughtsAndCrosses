@@ -109,18 +109,21 @@ class NncGui:
         if the result is a number, it will ask to declare the results and disable all buttons.
         else -> displays next players turn
         """
-        result = self.game.make_move(row, col)
-        if result is not False:
-            value = self.game.get_cell_value(row, col)
-            player = self.game.current_player
-            self.buttons[row][col].config(text=value, fg=player.color)
-            if result == constants.DRAW or result is not None:
-                self.declare_result(result)
-                self.disable_board_buttons()
-            else:
-                self.game.current_player = self.game.get_next_player()
-                self.update_turn_label()
-            self.update_stats_label()
+        try:
+            result = self.game.make_move(row, col)
+            if result is not False:
+                value = self.game.get_cell_value(row, col)
+                player = self.game.current_player
+                self.buttons[row][col].config(text=value, fg=player.color)
+                if result == constants.DRAW or result is not None:
+                    self.declare_result(result)
+                    self.disable_board_buttons()
+                else:
+                    self.game.current_player = self.game.get_next_player()
+                    self.update_turn_label()
+                self.update_stats_label()
+        except Exception as e:
+            messagebox.showerror("ERROR", f"Error handling click at {row},{col}: {e}")
 
     def declare_result(self, result):
         """

@@ -20,7 +20,7 @@ class Game:
             1: Player(constants.P1, constants.P1_SYMBOL, constants.P1_COLOR),
             2: Player(constants.P2, constants.P2_SYMBOL, constants.P2_COLOR)
         }
-        self.current_player = self.players[1]
+        self.current_player = self.players[constants.P1]
         self.current_turn = 0
 
     def new_game(self):
