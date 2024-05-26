@@ -10,9 +10,9 @@ class Board:
             for cell in row:
                 cell.value = None
 
-    def make_move(self, row, col, value):
+    def make_move(self, row, col, player):
         if self._cells[row][col].is_empty():
-            self._cells[row][col].value = value
+            self._cells[row][col].value = player.symbol
             return True
         return False
 
